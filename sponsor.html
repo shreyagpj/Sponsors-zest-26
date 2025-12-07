@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zest 26 Sponsors Initial Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #353535;
+      font-family: sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .background {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hexagon {
+      position: absolute;
+      width: 6vw;
+      height: calc(6vw*0.5774);
+      background-color: #2b2b2b;
+    }
+
+    .hexagon::after,
+    .hexagon::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      border-left: 3vw solid transparent;
+      border-right: 3vw solid transparent;
+    }
+
+    .hexagon::after {
+      top: 100%;
+      border-top: calc(3vw*0.5774) solid #2b2b2b;
+    }
+
+    .hexagon::before {
+      bottom: 100%;
+      border-bottom: calc(3vw*0.5774) solid #2b2b2b;
+    }
+
+    .cursor {
+      width: 25vw;
+      height: 25vw;
+      border-radius: 100%;
+      position: absolute;
+      box-shadow: 0 0 50px rgba(241, 196, 15, 0.64);
+      z-index: 0;
+      opacity: 0;
+      background: linear-gradient(45deg, #FF5733, #FF8C00, #FFB300, #FFDA6D);
+      background-size: 400%;
+      animation: glower 20s linear infinite;
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    @keyframes glower {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 400% 0;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .card-shadow {
+      box-shadow: 0 10px 15px -3px rgba(255, 174, 66, 0.4), 0 4px 6px -2px rgba(255, 174, 66, 0.3);
+    }
+
+    .overlay-container {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BG -->
+  <div class="background">
+    <div class="cursor"></div>
+  </div>
+
+  <!-- Sponsors -->
+  <div class="overlay-container flex flex-col items-center px-4 md:px-10 py-10">
+    <header class="text-center mb-12 md:mb-16">
+      <h1
+        class="text-4xl md:text-5xl font-semibold uppercase tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-yellow-400">
+        Our Amazing Sponsors</h1>
+      <p class="mt-3 text-yellow-300 text-base md:text-lg max-w-xl mx-auto">We proudly partner with these organizations.
+      </p>
+    </header>
+
+    <div id="sponsors" class="space-y-12 w-full max-w-5xl">
+
+      <!-- Card 1 -->
+      <div class="relative bg-gray-800 rounded-xl card-shadow overflow-hidden w-full h-auto md:h-72 flex flex-col">
+        <div id="inner-1" class="flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+          <!-- Slide 1 -->
+          <div class="flex flex-col md:flex-row w-full md:w-1/2 px-6 md:px-10 py-8 gap-6 items-center md:items-center">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex justify-center items-center w-full md:w-auto mb-4 md:mb-0 md:mr-8">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Sponsor 1"
+                class="object-contain w-32 h-32 md:w-40 md:h-40" />
+            </div>
+            <!-- Right text -->
+            <div class="flex flex-col flex-1 items-center md:items-start text-center md:text-left">
+              <h2
+                class="uppercase text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-yellow-400 bg-clip-text text-transparent text-center md:text-center w-full">
+                The Chief Sponsor
+              </h2>
+              <p class="mt-2 text-yellow-300 text-left w-full">
+                Leading the way in tech innovation.
+              </p>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="flex flex-col justify-center px-6 md:px-16 py-8 w-full md:w-1/2 bg-amber-950 bg-opacity-20">
+            <h2
+              class="uppercase text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-yellow-400 bg-clip-text text-transparent mb-4 text-center md:text-left">
+              The Chief Sponsor
+            </h2>
+            <p class="text-yellow-200 text-left leading-relaxed">Sponsor 1 is a global tech leader providing
+              cutting-edge solutions.</p>
+          </div>
+        </div>
+        <!-- Button is OUTSIDE sliding container so always visible -->
+        <div class="flex justify-center md:justify-end">
+          <button id="btn-1" class="m-4 bg-amber-700 px-5 py-2 text-white rounded-lg" onclick="toggleCard(1)">More
+            Info</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="relative bg-gray-800 rounded-xl card-shadow overflow-hidden w-full h-auto md:h-72 flex flex-col">
+        <div id="inner-2" class="flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+          <!-- Slide 1 -->
+          <div class="flex flex-col md:flex-row w-full md:w-1/2 px-6 md:px-10 py-8 gap-6 items-center md:items-center">
+            <div class="flex-shrink-0 flex justify-center items-center w-full md:w-auto mb-4 md:mb-0 md:mr-8">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Sponsor 2"
+                class="object-contain w-32 h-32 md:w-40 md:h-40" />
+            </div>
+            <div class="flex flex-col flex-1 items-center md:items-start text-center md:text-left">
+              <h2
+                class="uppercase text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-yellow-400 bg-clip-text text-transparent text-center md:text-center w-full">
+                Sustainability Partner
+              </h2>
+              <p class="mt-2 text-yellow-300 text-left w-full">Committed to sustainable future solutions.</p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-center px-6 md:px-16 py-8 w-full md:w-1/2 bg-amber-950 bg-opacity-20">
+            <h2
+              class="uppercase text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-yellow-400 bg-clip-text text-transparent mb-4 text-center md:text-left">
+              Sustainability Partner</h2>
+            <p class="text-yellow-200 text-left">Green Solutions Ltd pioneers eco-friendly technologies.</p>
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <button id="btn-2" class="m-4 bg-amber-700 px-5 py-2 text-white rounded-lg" onclick="toggleCard(2)">More
+            Info</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="relative bg-gray-800 rounded-xl card-shadow overflow-hidden w-full h-auto md:h-72 flex flex-col">
+        <div id="inner-3" class="flex w-[200%] h-full transition-transform duration-500 ease-in-out">
+          <!-- Slide 1 -->
+          <div class="flex flex-col md:flex-row w-full md:w-1/2 px-6 md:px-10 py-8 gap-6 items-center md:items-center">
+            <div class="flex-shrink-0 flex justify-center items-center w-full md:w-auto mb-4 md:mb-0 md:mr-8">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tesla_Motors.svg" alt="Sponsor 3"
+                class="object-contain w-32 h-32 md:w-40 md:h-40" />
+            </div>
+            <div class="flex flex-col flex-1 items-center md:items-start text-center md:text-left">
+              <h2
+                class="uppercase text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-yellow-400 bg-clip-text text-transparent text-center md:text-center w-full">
+                Innovation Leader
+              </h2>
+              <p class="mt-2 text-yellow-300 text-left w-full">Innovating tomorrow’s industries today.</p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-center px-6 md:px-16 py-8 w-full md:w-1/2 bg-amber-950 bg-opacity-20">
+            <h2
+              class="uppercase text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-600 to-yellow-400 bg-clip-text text-transparent mb-4 text-center md:text-left">
+              Innovation Leader</h2>
+            <p class="text-yellow-200 text-left">InnovateX empowers sectors with tailored growth strategies.</p>
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <button id="btn-3" class="m-4 bg-amber-700 px-5 py-2 text-white rounded-lg" onclick="toggleCard(3)">More
+            Info</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Cursor
+    const curs = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+      curs.style.left = (e.pageX - curs.offsetWidth / 2) + "px";
+      curs.style.top = (e.pageY - curs.offsetHeight / 2) + "px";
+      curs.style.opacity = "1";
+    });
+
+    // Hex grid
+    function createHexagons() {
+      const bg = document.querySelector('.background');
+      document.querySelectorAll('.hexagon').forEach(h => h.remove());
+      const hexSize = window.innerWidth * 0.06;
+      const hexHeight = hexSize * 0.5774 * 2;
+      const hexWidth = hexSize * 1.1;
+      const vertDist = hexHeight * 0.8;
+      const rows = Math.ceil(window.innerHeight / vertDist) + 2;
+      const cols = Math.ceil(window.innerWidth / hexWidth) + 4;
+      for (let r = 0; r < rows; r++) {
+        for (let c = -1; c < cols; c++) {
+          const hex = document.createElement("div");
+          hex.className = "hexagon";
+          const x = c * hexWidth + (r % 2 === 0 ? 0 : hexWidth / 2);
+          const y = r * vertDist;
+          hex.style.left = x + "px"; hex.style.top = y + "px";
+          bg.appendChild(hex);
+        }
+      }
+    }
+    window.addEventListener('resize', createHexagons);
+    window.addEventListener('load', createHexagons);
+
+    // Toggle
+    const states = {};
+    function toggleCard(id) {
+      const inner = document.getElementById('inner-' + id);
+      const btn = document.getElementById('btn-' + id);
+      states[id] = !states[id];
+      inner.style.transform = states[id] ? 'translateX(-50%)' : 'translateX(0)';
+      btn.textContent = states[id] ? 'Back' : 'More Info';
+    }
+  </script>
+</body>
+
+</html>
